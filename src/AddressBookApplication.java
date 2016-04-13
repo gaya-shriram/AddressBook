@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 
 /* 
  * AddressBookApplication class is the main program.
@@ -40,44 +41,76 @@ public class AddressBookApplication {
 	// ab.list();
 	// }
 
-//	// File I/O exercise method
-//
-//	static void init(String filename, AddressBook ab) throws Exception
-//
-//	{
-//		BufferedReader br = new BufferedReader(new FileReader("data.txt"));
-//
-//		String line = null;
-//		while ((line = br.readLine()) != null) {
-//			
-//			
-//			ab.add(new AddressEntry(values,values2));
-//		}
-//		br.close();
-//	}
-	
-	
-	static void init(String filename,AddressBook ab) throws Exception
-	{
-		
-		AddressEntry entry = new AddressEntry();
-		//new buffered reader
-		BufferedReader br = new BufferedReader(new FileReader("data.txt"));
-		
-		// add all lines from the file to the arraylist
-		while(true)
-		{
-			String line = br.readLine();
-			if(line==null)
-			{
-				break;
+	// // File I/O exercise method
+	//
+	// static void init(String filename, AddressBook ab) throws Exception
+	//
+	// {
+	// BufferedReader br = new BufferedReader(new FileReader("data.txt"));
+	//
+	// String line = null;
+	// while ((line = br.readLine()) != null) {
+	//
+	//
+	// ab.add(new AddressEntry(values,values2));
+	// }
+	// br.close();
+	// }
+
+	static void init(String filename, AddressBook ab) {
+		try {
+
+			AddressEntry entry = new AddressEntry();
+			// new buffered reader
+			BufferedReader br = new BufferedReader(new FileReader("data.txt"));
+			int linenumber = 1;
+			String line = null;
+			// add all lines from the file to the arraylist
+
+			while ((line = br.readLine()) != null) {
+				if (linenumber == 1) {
+					entry = new AddressEntry();
+				}
+				switch (linenumber) {
+				case 1:
+					entry.setFirstName(line);
+					break;
+				case 2:
+					entry.setLastName(line);
+					break;
+				case 3:
+					entry.setStreet(line);
+					break;
+				case 4:
+					entry.setCity(line);
+					break;
+				case 5:
+					entry.setState(line);
+					break;
+				case 6:
+					entry.setZip(Integer.parseInt(line));
+					break;
+				case 7:
+					entry.setPhone(line);
+					break;
+				case 8:
+					entry.setEmail(line);
+					break;
+				}
+				if (linenumber == 8) {
+					ab.add(entry);
+				}
+				linenumber = (linenumber % 8) + 1;
 			}
-			 ab.add(line);
-			
+
+			br.close();
+
+		} catch (NumberFormatException e) {
+
+			System.err.println("Inavlid Zip Code");
+		} catch (IOException e) {
+			System.err.println("Invalid File Format");
 		}
-		
-		br.close();
-		
 	}
 
 	// Main method where the program execution begins.
@@ -87,7 +120,7 @@ public class AddressBookApplication {
 
 		// AddressBook class instance creation
 		AddressBook ab = new AddressBook();
-		init(filename,ab);
+		init("filename", ab);
 		ab.list();
 		// initAddressBookExercise(ab);
 

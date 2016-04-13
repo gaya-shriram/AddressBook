@@ -12,9 +12,6 @@ public class AddressEntry {
 	private String phone;
 	private String email;
 	
-	public String[] values = new String[10];
-	public int[] values2 = new int[8];
-
 	// No parameter Constructor
 	public AddressEntry() {
 
@@ -33,18 +30,7 @@ public class AddressEntry {
 		this.email = email;
 	}
 	
-	// File IO exercise constructor
-	// Constructor with parameters.
-//	public AddressEntry(String values[] , int values2[]) {
-//		this.firstName = values[0];
-//		this.lastName = values[1];
-//		this.street = values[2];
-//		this.city = values[3];
-//		this.state = values[4];
-//		this.zip = values2[0];
-//		this.phone = values[5];
-//		this.email = values[6];
-//	}
+
 
 	// Get and Set methods to get and set the values to the corresponding
 	// fields.
