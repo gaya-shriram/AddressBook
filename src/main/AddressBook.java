@@ -52,7 +52,7 @@ public class AddressBook {
     /**
      * Add method to add the entries into the array list.
      *
-     * @param ae
+     * @param ae - AddressEntry object which you want to add
      */
     public void addition(AddressEntry ae) {
         addressEntryList.add(ae);
@@ -61,7 +61,7 @@ public class AddressBook {
     /**
      * Remove an address book entry
      *
-     * @param searchString
+     * @param searchString - Search string
      */
     public void removal(String searchString) {
         List<AddressEntry> entries = find(searchString);
@@ -90,7 +90,7 @@ public class AddressBook {
     /**
      * find an addressbook entry
      *
-     * @param searchString
+     * @param searchString -  Search string
      */
     public List<AddressEntry> find(String searchString) {
         List<AddressEntry> result = new ArrayList<AddressEntry>();
@@ -141,6 +141,7 @@ public class AddressBook {
         }
     }
 
+    @Override
     public String toString() {
         StringBuffer str = new StringBuffer();
         for (AddressEntry entry : addressEntryList) {
