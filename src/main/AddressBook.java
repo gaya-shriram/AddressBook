@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AddressBook {
-    private static ArrayList<AddressEntry> addressEntryList;
+    private static List<AddressEntry> addressEntryList;
     Scanner input = new Scanner(System.in);
 
     /**
@@ -45,8 +45,9 @@ public class AddressBook {
     /**
      * List method is used to list the address entries.
      */
-    public void list() {
+    public List<AddressEntry> list() {
         Collections.sort(addressEntryList);
+        return addressEntryList;
     }
 
     /**

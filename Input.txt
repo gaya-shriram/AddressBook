@@ -1,0 +1,48 @@
+Lynne
+Grewe
+123 3rd Ave
+Hayward
+Ca
+28666
+lynne.grewe@csueastbay.edu
+510-885-4167
+Butch
+Grewe
+Bay Avenue
+Capitoal
+Ca
+99999
+bg@gmail.com
+415-389-1239
+Gaya
+Shriram
+345 3rd Ave
+Hayward
+Ca
+28666
+gaya.shriram@csueastbay.edu
+510-885-4789
+Bala
+Sankar
+Buick Avenue
+Capitoal
+Ca
+99999
+balasankar@gmail.com
+415-389-1234
+Divya
+Vivek
+123 6th Ave
+Fremont
+Ca
+94555
+divya.vivek@csueastbay.edu
+809-885-4167
+John
+snow
+Baywatch Avenue
+ChinoHills
+Ca
+99911
+johnsnow@gmail.com
+415-389-8907
